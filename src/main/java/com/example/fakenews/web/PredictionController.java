@@ -1,5 +1,6 @@
 package com.example.fakenews.web;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +14,7 @@ import org.springframework.web.server.ResponseStatusException;
 public class PredictionController {
     private final ModelService modelService;
 
-    public PredictionController(ModelService modelService) {
+    public PredictionController(@Lazy ModelService modelService) {
         this.modelService = modelService;
     }
 
